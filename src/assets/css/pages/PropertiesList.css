@@ -1,0 +1,199 @@
+.page-header {
+    background: white;
+    padding: 1rem 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 56px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    height: 56px; /* Fixed height for the header */
+   }
+   
+   .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    flex-wrap: wrap;  /* Quan trọng */
+  }
+   
+ 
+  .page-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
+    color: #1a1a1a;
+    max-width: 100%;  /* Full chiều ngang */
+    word-break: break-word;
+  }
+   
+   .filter-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    margin : 0.5rem;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    color: #1a1a1a;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+   }
+   
+   .filter-toggle:hover {
+    background: #f1f5f9;
+   }
+   
+   .properties-list-page {
+    min-height: 100vh;
+    background-color: #f8fafc;
+    padding-bottom: 60px; /* Reduced to accommodate smaller QuickNavigation */
+   }
+   
+   .main-container {
+    padding-top: calc(56px + 1rem); /* Header height + some padding */
+   }
+   
+   .filters-panel {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease;
+    margin-bottom: 1rem;
+   }
+   
+   .filters-panel.show {
+    height: auto;
+   }
+   
+   .properties-content {
+    margin-top: 1rem;
+   }
+   
+   .loading-state,
+   .error-state,
+   .empty-state {
+    text-align: center;
+    padding: 4rem 0;
+   }
+   
+   .spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid var(--bs-primary);
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    animation: spin 1s linear infinite;
+   }
+   
+   .error-state i,
+   .empty-state i {
+    font-size: 3rem;
+    color: #64748b;
+    margin-bottom: 1rem;
+   }
+   
+   .retry-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--bs-primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 1rem;
+   }
+   
+   .retry-button:hover {
+    background: #7ab8ff;
+    transform: translateY(-1px);
+   }
+   
+   .properties-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+   }
+   
+   .load-more {
+    text-align: center;
+   }
+   
+   .load-more-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 2rem;
+    background: var(--bs-primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+   }
+   
+   .load-more-button:hover {
+    background: #7ab8ff;
+    transform: translateY(-1px);
+   }
+   
+   .load-more-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+   }
+   
+   @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+   }
+   
+   @media (max-width: 576px) {
+    .page-title {
+      font-size: 1.1rem;
+    }
+    
+    .filter-toggle {
+      padding: 0.4rem;
+    }
+   }
+   
+   @media (max-width: 389px) {
+     .page-title {
+       font-size: 0.95rem;
+       max-width: 60%;
+     }
+     
+     .filter-toggle {
+       padding: 0.3rem;
+       font-size: 0.85rem;
+     }
+     
+     .filter-toggle i {
+       font-size: 0.85rem;
+     }
+     
+     .header-content {
+       flex-wrap: nowrap;
+     }
+   }
+   
+   @media (max-width: 768px) {
+    .page-header {
+      top: 56px;
+    }
+   
+    .properties-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+   }
